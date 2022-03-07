@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BloodPressureLog</string>
+
+    <string name="main_title">안녕하세요,\n오늘의 혈압을 기록해보세요.</string>
+    <string name="main_menu_write_blood_pressure">혈압 기록하기</string>
+    <string name="main_menu_list_blood_pressure">혈압 기록보기</string>
+
+    <string name="bp_write_title">혈압 기록</string>
+</resources>
