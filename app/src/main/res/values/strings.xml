@@ -6,4 +6,12 @@
     <string name="main_menu_list_blood_pressure">혈압 기록보기</string>
 
     <string name="bp_write_title">혈압 기록</string>
+
+    <string name="bp_write_max">최고 혈압</string>
+    <string name="bp_write_min">최저 혈압</string>
+    <string name="bp_write_pulse">맥박</string>
+    <string name="bp_write_memo">한줄 메모</string>
+
+    <string name="bp_result_good">정상</string>
+    <string name="bp_result_bad">나쁨</string>
 </resources>
