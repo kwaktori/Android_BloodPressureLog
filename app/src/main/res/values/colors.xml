@@ -9,4 +9,11 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="bg_main_blue">#B2D7FC</color>
+
+    <color name="color_result_msg_good">#008000</color>
+    <color name="color_result_msg_warning">#FF7F00</color>
+    <color name="color_result_msg_bad">#D1180B</color>
+
+    <color name="btn_on">#0080FF</color>
+    <color name="btn_off">#A9A9A9</color>
 </resources>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_title_view"
@@ -10,34 +10,34 @@
         android:layout_height="54dp"
         android:background="#B2D7FC"
 
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/iv_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_back"
             android:layout_marginStart="16dp"
+            android:src="@drawable/ic_back"
 
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
             android:text="@string/bp_write_title"
             android:textColor="#000000"
             android:textSize="19dp"
-            android:gravity="center"
-            android:layout_marginStart="8dp"
 
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_back"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -47,10 +47,10 @@
         android:layout_height="0dp"
         android:orientation="vertical"
 
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cl_title_view"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_title_view">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_date_time"
@@ -63,106 +63,105 @@
                 android:id="@+id/tv_date_time_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:text="날짜"
                 android:textColor="#000000"
                 android:textSize="15dp"
-                android:layout_marginStart="16dp"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/view_divider"
                 android:layout_width="1dp"
                 android:layout_height="17dp"
-                android:background="#A9A9A9"
                 android:layout_marginStart="10dp"
+                android:background="#A9A9A9"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_date_time_title" />
+                app:layout_constraintStart_toEndOf="@+id/tv_date_time_title"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_date_time"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="2022.03.07(월)"
-                android:textColor="#000000"
-                android:textSize="15dp"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:ellipsize="end"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="15dp"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_morning"
                 app:layout_constraintStart_toEndOf="@+id/view_divider"
-                app:layout_constraintEnd_toStartOf="@+id/tv_morning"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_morning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_date_btn_selector"
+                android:paddingStart="6dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="3dp"
                 android:text="아침"
                 android:textColor="#A9A9A9"
                 android:textSize="15dp"
-                android:layout_marginEnd="12dp"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp"
-                android:background="@drawable/bg_date_btn_selector"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tv_evening"/>
+                app:layout_constraintEnd_toStartOf="@+id/tv_evening"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_evening"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_date_btn_selector"
+                android:paddingStart="6dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="3dp"
                 android:text="저녁"
                 android:textColor="#A9A9A9"
                 android:textSize="15dp"
-                android:layout_marginEnd="12dp"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp"
-                android:background="@drawable/bg_date_btn_selector"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tv_night"/>
+                app:layout_constraintEnd_toStartOf="@+id/tv_night"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_night"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_date_btn_selector"
+                android:paddingStart="6dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="3dp"
                 android:text="밤"
                 android:textColor="#A9A9A9"
                 android:textSize="15dp"
-                android:layout_marginEnd="16dp"
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp"
-                android:background="@drawable/bg_date_btn_selector"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="#A9A9A9"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:background="#A9A9A9" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_contraction_view"
@@ -175,51 +174,53 @@
                 android:id="@+id/tv_contraction_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:minWidth="60dp"
                 android:text="@string/bp_write_max"
                 android:textColor="#000000"
                 android:textSize="15dp"
-                android:layout_marginStart="16dp"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/view_divider_contraction"
                 android:layout_width="1dp"
                 android:layout_height="17dp"
-                android:background="#A9A9A9"
                 android:layout_marginStart="10dp"
+                android:background="#A9A9A9"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_contraction_title" />
+                app:layout_constraintStart_toEndOf="@+id/tv_contraction_title"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/et_bp_max"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minWidth="80dp"
-                android:textColor="#0080FF"
-                android:textSize="15dp"
-                android:inputType="number"
-                android:maxLength="3"
                 android:layout_marginStart="10dp"
                 android:background="@drawable/bg_edit"
+                android:inputType="number"
+                android:maxLength="3"
+                android:minWidth="80dp"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textColor="#0080FF"
+                android:textSize="15dp"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/view_divider_contraction" />
+                app:layout_constraintStart_toEndOf="@+id/view_divider_contraction"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="#A9A9A9"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:background="#A9A9A9" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_relaxation_view"
@@ -232,108 +233,53 @@
                 android:id="@+id/tv_relaxation_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:minWidth="60dp"
                 android:text="@string/bp_write_min"
                 android:textColor="#000000"
                 android:textSize="15dp"
-                android:layout_marginStart="16dp"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/view_divider_relaxation"
                 android:layout_width="1dp"
                 android:layout_height="17dp"
-                android:background="#A9A9A9"
                 android:layout_marginStart="10dp"
+                android:background="#A9A9A9"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_relaxation_title" />
+                app:layout_constraintStart_toEndOf="@+id/tv_relaxation_title"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/et_bp_min"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:minWidth="80dp"
-                android:textColor="#0080FF"
-                android:textSize="15dp"
-                android:inputType="number"
-                android:maxLength="3"
                 android:layout_marginStart="10dp"
                 android:background="@drawable/bg_edit"
+                android:inputType="number"
+                android:maxLength="3"
+                android:minWidth="80dp"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textColor="#0080FF"
+                android:textSize="15dp"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/view_divider_relaxation" />
+                app:layout_constraintStart_toEndOf="@+id/view_divider_relaxation"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="#A9A9A9"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_pulse_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="50dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tv_pulse_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="60dp"
-                android:text="@string/bp_write_pulse"
-                android:textColor="#000000"
-                android:textSize="15dp"
-                android:layout_marginStart="16dp"
-
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <View
-                android:id="@+id/view_divider_pulse"
-                android:layout_width="1dp"
-                android:layout_height="17dp"
-                android:background="#A9A9A9"
-                android:layout_marginStart="10dp"
-
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_pulse_title" />
-
-            <EditText
-                android:id="@+id/et_bp_pulse"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:minWidth="80dp"
-                android:textColor="#0080FF"
-                android:textSize="15dp"
-                android:inputType="number"
-                android:maxLength="3"
-                android:layout_marginStart="10dp"
-                android:background="@drawable/bg_edit"
-
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/view_divider_pulse" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#A9A9A9"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:background="#A9A9A9" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_memo_view"
@@ -346,76 +292,103 @@
                 android:id="@+id/tv_memo_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:minWidth="60dp"
                 android:text="@string/bp_write_memo"
                 android:textColor="#000000"
                 android:textSize="15dp"
-                android:layout_marginStart="16dp"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/view_divider_memo"
                 android:layout_width="1dp"
                 android:layout_height="17dp"
-                android:background="#A9A9A9"
                 android:layout_marginStart="10dp"
+                android:background="#A9A9A9"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_memo_title" />
+                app:layout_constraintStart_toEndOf="@+id/tv_memo_title"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/et_memo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:textSize="15dp"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:ellipsize="end"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/bg_edit"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="15dp"
 
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/view_divider_memo"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="#A9A9A9"
             android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:background="#A9A9A9" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="측정하기"
-            android:textColor="#0080FF"
-            android:textSize="16dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingStart="13dp"
-            android:paddingEnd="13dp"
-            android:background="@drawable/bg_btn_blue"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"/>
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_btn_blue"
+                android:paddingStart="13dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="13dp"
+                android:paddingBottom="5dp"
+                android:text="측정하기"
+                android:textColor="#0080FF"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_btn_blue"
+                android:paddingStart="13dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="13dp"
+                android:paddingBottom="5dp"
+                android:layout_marginStart="50dp"
+                android:text="저장하기"
+                android:textColor="#0080FF"
+                android:textSize="16dp" />
+
+        </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_result_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/bg_write_result"
             android:minHeight="50dp"
-            android:orientation="horizontal"
-            android:background="@drawable/bg_write_result">
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/iv_result_icon"
@@ -423,23 +396,23 @@
                 android:layout_height="150dp"
                 android:src="@drawable/ic_result_good"
 
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv_result"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/tv_result"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bp_result_good"
-                android:textSize="20dp"
+                android:textAlignment="center"
                 android:textColor="#008000"
+                android:textSize="17dp"
 
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_result_icon"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_result_icon" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

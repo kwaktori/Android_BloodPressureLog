@@ -12,6 +12,9 @@
     <string name="bp_write_pulse">맥박</string>
     <string name="bp_write_memo">한줄 메모</string>
 
-    <string name="bp_result_good">정상</string>
-    <string name="bp_result_bad">나쁨</string>
+    <string name="bp_result_good">정상혈압 입니다.\n최고에요!</string>
+    <string name="bp_result_warning">주의혈압 입니다.\n휴식을 취해보세요.</string>
+    <string name="bp_result_high_bp_before">고혈압 전단계 입니다.\n술을 멀리하세요.</string>
+    <string name="bp_result_high_bp_one">고혈압 1기 입니다.\n술을 멀리하고, 휴식을 취해보세요.</string>
+    <string name="bp_result_high_bp_two">고혈압 2기 입니다.\n위험하니 병원에 가보세요.</string>
 </resources>
