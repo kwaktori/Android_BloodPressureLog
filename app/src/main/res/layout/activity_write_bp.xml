@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="날짜"
+                android:text="@string/bp_write_date"
                 android:textColor="#000000"
                 android:textSize="15dp"
 
@@ -110,7 +110,7 @@
                 android:paddingTop="3dp"
                 android:paddingEnd="6dp"
                 android:paddingBottom="3dp"
-                android:text="아침"
+                android:text="@string/bp_morning"
                 android:textColor="#A9A9A9"
                 android:textSize="15dp"
 
@@ -128,7 +128,7 @@
                 android:paddingTop="3dp"
                 android:paddingEnd="6dp"
                 android:paddingBottom="3dp"
-                android:text="저녁"
+                android:text="@string/bp_dinner"
                 android:textColor="#A9A9A9"
                 android:textSize="15dp"
 
@@ -146,7 +146,7 @@
                 android:paddingTop="3dp"
                 android:paddingEnd="6dp"
                 android:paddingBottom="3dp"
-                android:text="밤"
+                android:text="@string/bp_night"
                 android:textColor="#A9A9A9"
                 android:textSize="15dp"
 
@@ -358,7 +358,7 @@
                 android:paddingTop="5dp"
                 android:paddingEnd="13dp"
                 android:paddingBottom="5dp"
-                android:text="측정하기"
+                android:text="@string/btn_confirm"
                 android:textColor="#0080FF"
                 android:textSize="16dp" />
 
@@ -373,7 +373,7 @@
                 android:paddingEnd="13dp"
                 android:paddingBottom="5dp"
                 android:layout_marginStart="50dp"
-                android:text="저장하기"
+                android:text="@string/btn_save"
                 android:textColor="#0080FF"
                 android:textSize="16dp" />
 

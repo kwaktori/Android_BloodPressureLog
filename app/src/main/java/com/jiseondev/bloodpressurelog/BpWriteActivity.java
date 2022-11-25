@@ -1,6 +1,9 @@
 package com.jiseondev.bloodpressurelog;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -16,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import common.CommonUtils;
+import database.BpLogDBHelper;
 
 public class BpWriteActivity extends AppCompatActivity {
 
@@ -36,6 +40,9 @@ public class BpWriteActivity extends AppCompatActivity {
 
     private int recordType = 0;
 
+    BpLogDBHelper dbHelper;
+    SQLiteDatabase db;
+
     private ImageView ivResultIcon;
     private TextView tvResultMsg;
     private View resultView;
@@ -47,6 +54,7 @@ public class BpWriteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_write_bp);
 
         initView();
+        initDatabase();
     }
 
     @Override
@@ -139,11 +147,11 @@ public class BpWriteActivity extends AppCompatActivity {
                 String date = tvDate.getText().toString();
 
                 if (recordType == 0) {
-                    Toast.makeText(getApplicationContext(), "현재 시간대를 선택해주세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.msg_select_time), Toast.LENGTH_SHORT).show();
                 } else if (etBpMax.getText().toString().isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "최고 혈압을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.msg_enter_max_bp), Toast.LENGTH_SHORT).show();
                 } else if (etBpMin.getText().toString().isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "최저 혈압을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.msg_enter_min_bp), Toast.LENGTH_SHORT).show();
                 } else {
                     int bpMax = Integer.parseInt(etBpMax.getText().toString());
                     int bpMin = Integer.parseInt(etBpMin.getText().toString());
@@ -162,14 +170,39 @@ public class BpWriteActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String date = tvDate.getText().toString();
 
+                if (recordType == 0) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.msg_select_time), Toast.LENGTH_SHORT).show();
+                } else if (etBpMax.getText().toString().isEmpty()) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.msg_enter_max_bp), Toast.LENGTH_SHORT).show();
+                } else if (etBpMin.getText().toString().isEmpty()) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.msg_enter_min_bp), Toast.LENGTH_SHORT).show();
+                } else {
+                    int bpMax = Integer.parseInt(etBpMax.getText().toString());
+                    int bpMin = Integer.parseInt(etBpMin.getText().toString());
+
+                    String memo = etMemo.getText().toString();
+
+                    // 키보드 숨기기
+                    InputMethodManager manager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    manager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+                    recordToDB(date, bpMax, bpMin, memo);
+                }
             }
         });
 
     }
 
+    private void initDatabase() {
+        dbHelper = new BpLogDBHelper(BpWriteActivity.this, "bprecorddb.db", null, 1);
+        db = dbHelper.getWritableDatabase();
+        dbHelper.onCreate(db);
+    }
+
     private String getTime() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd(E) HH:mm");
+        SimpleDateFormat dateFormat = new SimpleDateFormat(getString(R.string.date_format));
 
         long nowDateTime = System.currentTimeMillis();
         Date date = new Date(nowDateTime);
@@ -216,7 +249,28 @@ public class BpWriteActivity extends AppCompatActivity {
     }
 
     // DB에 저장
-    private void recordToDB() {
+    @SuppressLint("Range")
+    private void recordToDB(String date, int bpMax, int bpMin, String memo) {
+        ContentValues values = new ContentValues();
+        values.put(BpLogDBHelper.RECORD_DATE, date);
+        values.put(BpLogDBHelper.TIME_TYPE, String.valueOf(recordType));
+        values.put(BpLogDBHelper.BP_MAX, String.valueOf(bpMax));
+        values.put(BpLogDBHelper.BP_MIN, String.valueOf(bpMin));
+        values.put(BpLogDBHelper.MEMO, memo);
+        db.insert(BpLogDBHelper.BP_RECORD_TABLE_NAME, null, values);
 
+        Toast.makeText(getApplicationContext(), getString(R.string.msg_save), Toast.LENGTH_SHORT).show();
+
+//        db 항목 출력
+//        Cursor c = db.query(BpLogDBHelper.BP_RECORD_TABLE_NAME, null, null, null, null, null, null, null);
+//        while (c.moveToNext()) {
+//            System.out.println("jiseon result : " + c.getString(c.getColumnIndex(BpLogDBHelper.RECORD_DATE)));
+//            System.out.println("jiseon result : " + c.getString(c.getColumnIndex(BpLogDBHelper.TIME_TYPE)));
+//            System.out.println("jiseon result : " + c.getString(c.getColumnIndex(BpLogDBHelper.BP_MAX)));
+//            System.out.println("jiseon result : " + c.getString(c.getColumnIndex(BpLogDBHelper.BP_MIN)));
+//            System.out.println("jiseon result : " + c.getString(c.getColumnIndex(BpLogDBHelper.MEMO)));
+//        }
+
+        finish();
     }
 }

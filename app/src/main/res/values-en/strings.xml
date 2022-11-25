@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BloodPressureLog</string>
+
+    <string name="main_title">Hello, Record your blood pressure today.</string>
+    <string name="main_menu_write_blood_pressure">Recording blood pressure</string>
+    <string name="main_menu_list_blood_pressure">Viewing Blood Pressure Records</string>
+
+    <string name="bp_write_title">Blood pressure record</string>
+    <string name="bp_write_max">Maximum blood pressure</string>
+    <string name="bp_write_min">Minimum blood pressure</string>
+    <string name="bp_write_memo">Memo</string>
+    <string name="bp_write_date">Date</string>
+
+    <string name="bp_morning">Morning</string>
+    <string name="bp_dinner">Dinner</string>
+    <string name="bp_night">Night</string>
+
+    <string name="btn_save">Save</string>
+    <string name="btn_confirm">View Results</string>
+
+    <string name="bp_result_good">Normal blood pressure.</string>
+    <string name="bp_result_warning">It\'s a cautionary step.</string>
+    <string name="bp_result_high_bp_before">It\'s a pre-hypertension stage.</string>
+    <string name="bp_result_high_bp_one">It\'s stage 1 of hypertension.</string>
+    <string name="bp_result_high_bp_two">It\'s stage 2 of hypertension.</string>
+
+    <string name="msg_save">Your blood pressure has been stored.</string>
+    <string name="msg_select_time">Please select the current time zone.</string>
+    <string name="msg_enter_max_bp">Please enter the maximum blood pressure.</string>
+    <string name="msg_enter_min_bp">Please enter the minimum blood pressure.</string>
+
+    <string name="date_format">yyyy.MM.dd(E) HH:mm</string>
+</resources>

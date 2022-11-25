@@ -6,15 +6,29 @@
     <string name="main_menu_list_blood_pressure">혈압 기록보기</string>
 
     <string name="bp_write_title">혈압 기록</string>
-
     <string name="bp_write_max">최고 혈압</string>
     <string name="bp_write_min">최저 혈압</string>
-    <string name="bp_write_pulse">맥박</string>
     <string name="bp_write_memo">한줄 메모</string>
+    <string name="bp_write_date">일시</string>
+
+    <string name="bp_morning">아침</string>
+    <string name="bp_dinner">저녁</string>
+    <string name="bp_night">밤</string>
+
+    <string name="btn_confirm">측정하기</string>
+    <string name="btn_save">저장하기</string>
 
     <string name="bp_result_good">정상혈압 입니다.\n최고에요!</string>
     <string name="bp_result_warning">주의혈압 입니다.\n휴식을 취해보세요.</string>
     <string name="bp_result_high_bp_before">고혈압 전단계 입니다.\n술을 멀리하세요.</string>
     <string name="bp_result_high_bp_one">고혈압 1기 입니다.\n술을 멀리하고, 휴식을 취해보세요.</string>
     <string name="bp_result_high_bp_two">고혈압 2기 입니다.\n위험하니 병원에 가보세요.</string>
+
+    <string name="msg_save">혈압이 저장되었습니다.</string>
+    <string name="msg_select_time">현재 시간대를 선택해주세요.</string>
+    <string name="msg_enter_max_bp">최고 혈압을 입력해주세요.</string>
+    <string name="msg_enter_min_bp">최저 혈압을 입력해주세요.</string>
+
+    <string name="date_format">yyyy.MM.dd(E) HH:mm</string>
+
 </resources>
